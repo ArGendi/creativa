@@ -1,5 +1,6 @@
 import 'package:creativa1/cache.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -32,10 +33,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30)),
+                image: DecorationImage(
+                  image: AssetImage(""),
+                )
+              ),
+              child:
+            ),
             Text("profile"),
             TextButton(onPressed: (){
               Navigator.pop(context);
-            }, child: Text("Go back"))
+            }, child: Text("Go back")),
+            IconButton(
+              onPressed: (){
+                launchUrl(Uri.parse("tel:01286361736"));
+              }, 
+              icon: Icon(Icons.mail, size: 40, color: Colors.red,),
+            )
           ],
         ),
       ),

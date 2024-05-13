@@ -1,3 +1,39 @@
+import 'package:creativa1/cache.dart';
+import 'package:creativa1/home_screen.dart';
+import 'package:creativa1/login_screen.dart';
+import 'package:creativa1/products_screen.dart';
+import 'package:creativa1/profile_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //     options: DefaultFirebaseOptions.currentPlatform,
+  // );
+  Cache.init();
+  runApp(Abdo());
+}
+
+class Abdo extends StatefulWidget {
+  const Abdo({super.key});
+
+  @override
+  State<Abdo> createState() => _AbdoState();
+}
+
+class _AbdoState extends State<Abdo> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
+
+
+
+
 // // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 // import 'dart:io';
@@ -75,38 +111,3 @@
 //   runApp(MyApp());
 // }
 
-
-
-
-
-
-
-
-
-import 'package:creativa1/cache.dart';
-import 'package:creativa1/home_screen.dart';
-import 'package:creativa1/login_screen.dart';
-import 'package:creativa1/profile_screen.dart';
-import 'package:flutter/material.dart';
-
-void main(){
-  WidgetsFlutterBinding.ensureInitialized();
-  Cache.init();
-  runApp(Abdo());
-}
-
-class Abdo extends StatefulWidget {
-  const Abdo({super.key});
-
-  @override
-  State<Abdo> createState() => _AbdoState();
-}
-
-class _AbdoState extends State<Abdo> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Login(),
-    );
-  }
-}
